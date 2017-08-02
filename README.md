@@ -13,7 +13,7 @@ e.g. Ubuntu, Debian or Linux Mint, you can build the binary like this:
 
 ```bash
 # Debian / Ubuntu
-sudo apt-get install --no-install-recommends build-essential autoconf libtool libssl-dev libpcre3-dev libudns-dev libev-dev asciidoc xmlto automake
+sudo apt-get install --no-install-recommends build-essential autoconf libtool libssl-dev libpcre3-dev libudns-dev libev-dev asciidoc xmlto automake git
 # CentOS / Fedora / RHEL
 sudo yum install gcc autoconf libtool automake make zlib-devel openssl-devel asciidoc xmlto
 # Arch
@@ -23,8 +23,8 @@ git clone https://github.com/shadowsocks/simple-obfs.git
 cd simple-obfs
 git submodule update --init --recursive
 ./autogen.sh
-./configure && make
-sudo make install
+./configure --prefix=/usr --disable-documentation && make
+make install
 ```
 ## Usage
 
